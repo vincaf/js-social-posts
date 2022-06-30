@@ -140,4 +140,15 @@ function drawPost( postsList, htmlContainerId ){
             </div>
         </div>`;
     }
+
+    const buttonLikes = document.querySelectorAll('.likes__cta a')
+        for(let i = 0; i < buttonLikes.length; i++) {
+        buttonLikes[i].addEventListener('click', function(){
+            buttonLikes[i].classList.toggle('like-button--liked');
+            });
+        }
 }
+
+
+
+
