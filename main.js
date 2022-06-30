@@ -99,17 +99,18 @@ const posts = [
 
 console.log(posts);
 
-drawPost(posts, 'post');
+drawPost(posts, 'container');
 
-function drawTeam( postsList, htmlContainerClass ){
-    const post = document.getElementsByClassName(htmlContainerClass);
+function drawPost( postsList, htmlContainerId ){
+    const post = document.getElementById(htmlContainerId);
     post.innerHTML = "";
 
     for (let i = 0; i < postsList.length; i++) {
         const currentElement = postsList[i];
 
         post.innerHTML += `
-        <div class="post__header">
+        <div class="post">
+            <div class="post__header">
                 <div class="post-meta">
                     <div class="post-meta__icon">
                         <img class="profile-pic" src="${currentElement.author.image}" alt="${currentElement.author.name}">
@@ -136,6 +137,7 @@ function drawTeam( postsList, htmlContainerClass ){
                         Piace a <b id="like-counter-1" class="js-likes-counter">${currentElement.likes}</b> persone
                     </div>
                 </div>
-            </div>`;
+            </div>
+        </div>`;
     }
 }
